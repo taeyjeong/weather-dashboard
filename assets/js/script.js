@@ -7,6 +7,9 @@ $(document).ready(function() {
       return response.json();
     })
     .then(function(data) {
+      var iconcode = data['weather']['0']['icon'] // OBTAINING THE ICON FILE NAME
+      var iconurl = "http://openweathermap.org/img/w/"+iconcode+".png"; // OBTAINING THE SOURCE FOR ICON IMAGE
+      $('#wicon').attr('src', iconurl) // INSERTING THE ICON IMAGE
       $('#city').html(data['name']) // INSERTING THE FETCHED CITY DATA
       $('#temp').html((((data['main']['temp'] - 273.15) * 9/5) + 32).toFixed(1) + "°F") // INSERTING THE FETCHED TEMP DATA
       $('#humid').html(data['main']['humidity'] + "%") // INSERTING THE FETCHED HUMIDITY DATA
