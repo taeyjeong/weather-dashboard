@@ -28,3 +28,19 @@
   background-color: white;
   color: white;
 }
+
+#forecast5day {
+  height: 175px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+#forecast5day .info {
+  padding: 0 0 0 1%;
+  margin: 0 0 0 4%;
+  font-size: small;
+}
+#forecast5day a {
+  font-size: small;
+  font-weight: bold;
+}

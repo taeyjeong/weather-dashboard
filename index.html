@@ -18,7 +18,9 @@
   </header>
   <div class="container">
     <div class="row">
+
       <div class="col-4 bg-light">
+
         <h2 style="font-size:larger">Search for a City:</h2>
         <div class="col-10 input-group mb-3">
           <input id="input" type="text" class="form-control" aria-label="Recipient's username" aria-describedby="basic-addon2">
@@ -26,6 +28,7 @@
             <button id="submit" class="btn btn-outline-secondary bg-primary text-white" type="button"><i class="fas fa-search"></i></button>
           </div>
         </div>
+
         <ul class="col-12 list-group" id="history">
           <li class="list-group-item entry" href="#" style="color:black;"></li>
           <li class="list-group-item entry" href="#" style="color:black;"></li>
@@ -36,8 +39,11 @@
           <li class="list-group-item entry" href="#" style="color:black;"></li>
           <li class="list-group-item entry" href="#" style="color:black;"></li>
         </ul>
+
       </div>
+
       <div class="col-8">
+
         <div id="currentCity" class="col-12 border">
           <div class="heading"><span id="city"></span><span id="date0"></span><div class="icon"><img id="wicon" src="" alt="Weather icon"></div></div>
           <p>Temperature: <span id="temp"></span> </p>
@@ -45,6 +51,43 @@
           <p>Wind Speed: <span id="wind"></span> </p>
           <div id="uvIndex">UV Index: <div id="uv"></div></div> </br>
         </div>
+
+        <h3 style="margin:2%">5-Day Forecast:</h3>
+        <div id="forecast5day" class="col-12">
+
+          <div class="col-2 bg-primary rounded text-light info"></br>
+            <a id="date1"></a>
+            <div class="icon"><img id="icon1" src=""></div>
+            <p>Temp: <a id="day1temp"></a></p>
+            <p>Humidity: <a id="day1humid"></a></p>
+          </div>
+          <div class="col-2 bg-primary rounded text-light info"></br>
+            <a id="date2"></a>
+            <div class="icon"><img id="icon2" src=""></div> 
+            <p>Temp: <a id="day2temp"></a></p>
+            <p>Humidity: <a id="day2humid"></a></p>
+          </div>
+          <div class="col-2 bg-primary rounded text-light info"></br>
+            <a id="date3"></a>
+            <div class="icon"><img id="icon3" src=""></div> 
+            <p>Temp: <a id="day3temp"></a></p>
+            <p>Humidity: <a id="day3humid"></a></p>
+          </div>
+          <div class="col-2 bg-primary rounded text-light info"></br>
+            <a id="date4"></a>
+            <div class="icon"><img id="icon4" src=""></div> 
+            <p>Temp: <a id="day4temp"></a></p>
+            <p>Humidity: <a id="day4humid"></a></p>
+          </div>
+          <div class="col-2 bg-primary rounded text-light info"></br>
+            <a id="date5"></a>
+            <div class="icon"><img id="icon5" src=""></div>
+            <p>Temp: <a id="day5temp"></a></p>
+            <p>Humidity: <a id="day5humid"></a></p>
+          </div>
+          
+        </div>
+        
       </div>
     </div>
   </div>
