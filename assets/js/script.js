@@ -8,9 +8,9 @@ $(document).ready(function() {
     })
     .then(function(data) {
       $('#city').html(data['name']) // INSERTING THE FETCHED CITY DATA
-      $('#temp').html(data['main']['temp']) // INSERTING THE FETCHED TEMP DATA
-      $('#humid').html(data['main']['humidity']) // INSERTING THE FETCHED HUMIDITY DATA
-      $('#wind').html(data['wind']['speed']) // INSERTING THE FETCHED WIND SPEED DATA
+      $('#temp').html((((data['main']['temp'] - 273.15) * 9/5) + 32).toFixed(1) + "°F") // INSERTING THE FETCHED TEMP DATA
+      $('#humid').html(data['main']['humidity'] + "%") // INSERTING THE FETCHED HUMIDITY DATA
+      $('#wind').html((data['wind']['speed']) + "mph") // INSERTING THE FETCHED WIND SPEED DATA
       console.log(data)
     })
   })
