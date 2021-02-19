@@ -68,6 +68,13 @@ $(document).ready(function() {
       $('#icon3').attr('src', iconurl3)
       $('#icon4').attr('src', iconurl4)
       $('#icon5').attr('src', iconurl5)
+      // INSERTING 5 DATES AFTER TODAY
+      $('#date0').html(data['list']['0']['dt_txt'].slice(5, 7) + "/" + data['list']['0']['dt_txt'].slice(8, 10) + "/2021")
+      $('#date1').html(data['list']['7']['dt_txt'].slice(5, 7) + "/" + data['list']['7']['dt_txt'].slice(8, 10) + "/2021")
+      $('#date2').html(data['list']['15']['dt_txt'].slice(5, 7) + "/" + data['list']['15']['dt_txt'].slice(8, 10) + "/2021")
+      $('#date3').html(data['list']['23']['dt_txt'].slice(5, 7) + "/" + data['list']['23']['dt_txt'].slice(8, 10) + "/2021")
+      $('#date4').html(data['list']['31']['dt_txt'].slice(5, 7) + "/" + data['list']['31']['dt_txt'].slice(8, 10) + "/2021")
+      $('#date5').html(data['list']['39']['dt_txt'].slice(5, 7) + "/" + data['list']['39']['dt_txt'].slice(8, 10) + "/2021")
     })
   })
 })
