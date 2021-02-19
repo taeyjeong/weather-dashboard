@@ -27,6 +27,7 @@ $(document).ready(function() {
       .then(function(data) {
         var uvDanger = data['current']['uvi']
         $('#uv').html(uvDanger)
+        // UV index changes background color based on rating
         if (uvDanger < 3) {
           $('#uv').css('background-color', 'green')
         } else if (uvDanger > 3 && uvDanger < 6) {
@@ -40,6 +41,33 @@ $(document).ready(function() {
           $('#uv').text('DANGER')
         }
       })
+    })
+    // FETCHING THE DATA FOR 5 DAY FORECASTS
+    fetch(
+      'https://api.openweathermap.org/data/2.5/forecast?q='+input.value+'&appid=4f4fc4b2d81e48700fb99a35e316ea42'
+    )
+    .then(function(response) {
+      return response.json();
+    })
+    .then(function(data) {
+      // OBTAINING THE ICON FILE NAME
+      var iconcode1 = data['list']['7']['weather']['0']['icon']
+      var iconcode2 = data['list']['15']['weather']['0']['icon']
+      var iconcode3 = data['list']['23']['weather']['0']['icon']
+      var iconcode4 = data['list']['31']['weather']['0']['icon']
+      var iconcode5 = data['list']['39']['weather']['0']['icon']
+      // OBTAINING THE SOURCE FOR THE ICON IMAGE
+      var iconurl1 = "http://openweathermap.org/img/w/" + iconcode1 + ".png"
+      var iconurl2 = "http://openweathermap.org/img/w/" + iconcode2 + ".png"
+      var iconurl3 = "http://openweathermap.org/img/w/" + iconcode3 + ".png"      
+      var iconurl4 = "http://openweathermap.org/img/w/" + iconcode4 + ".png"
+      var iconurl5 = "http://openweathermap.org/img/w/" + iconcode5 + ".png"
+      // INSERTING THE ICON IMAGE 
+      $('#icon1').attr('src', iconurl1)
+      $('#icon2').attr('src', iconurl2)
+      $('#icon3').attr('src', iconurl3)
+      $('#icon4').attr('src', iconurl4)
+      $('#icon5').attr('src', iconurl5)
     })
   })
 })
