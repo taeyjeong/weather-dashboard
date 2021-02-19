@@ -59,7 +59,7 @@ $(document).ready(function() {
       // OBTAINING THE SOURCE FOR THE ICON IMAGE
       var iconurl1 = "http://openweathermap.org/img/w/" + iconcode1 + ".png"
       var iconurl2 = "http://openweathermap.org/img/w/" + iconcode2 + ".png"
-      var iconurl3 = "http://openweathermap.org/img/w/" + iconcode3 + ".png"      
+      var iconurl3 = "http://openweathermap.org/img/w/" + iconcode3 + ".png"
       var iconurl4 = "http://openweathermap.org/img/w/" + iconcode4 + ".png"
       var iconurl5 = "http://openweathermap.org/img/w/" + iconcode5 + ".png"
       // INSERTING THE ICON IMAGE 
@@ -75,6 +75,18 @@ $(document).ready(function() {
       $('#date3').html(data['list']['23']['dt_txt'].slice(5, 7) + "/" + data['list']['23']['dt_txt'].slice(8, 10) + "/2021")
       $('#date4').html(data['list']['31']['dt_txt'].slice(5, 7) + "/" + data['list']['31']['dt_txt'].slice(8, 10) + "/2021")
       $('#date5').html(data['list']['39']['dt_txt'].slice(5, 7) + "/" + data['list']['39']['dt_txt'].slice(8, 10) + "/2021")
+      // INSERTING THE FETCHED TEMPERATURE DATA FOR 5 DATES AFTER TODAY
+      $('#day1temp').html((((data['list']['7']['main']['temp'] - 273.15) * 9/5) + 32).toFixed(1) + "°F")
+      $('#day2temp').html((((data['list']['15']['main']['temp'] - 273.15) * 9/5) + 32).toFixed(1) + "°F")
+      $('#day3temp').html((((data['list']['23']['main']['temp'] - 273.15) * 9/5) + 32).toFixed(1) + "°F")
+      $('#day4temp').html((((data['list']['31']['main']['temp'] - 273.15) * 9/5) + 32).toFixed(1) + "°F")
+      $('#day5temp').html((((data['list']['39']['main']['temp'] - 273.15) * 9/5) + 32).toFixed(1) + "°F")
+      // INSERTING THE FETCHED HUMIDITY DATA FOR 5 DATES AFTER TODAY
+      $('#day1humid').html(data['list']['7']['main']['humidity'] + "%")
+      $('#day2humid').html(data['list']['15']['main']['humidity'] + "%")
+      $('#day3humid').html(data['list']['23']['main']['humidity'] + "%")
+      $('#day4humid').html(data['list']['31']['main']['humidity'] + "%")
+      $('#day5humid').html(data['list']['39']['main']['humidity'] + "%")
     })
   })
 })
