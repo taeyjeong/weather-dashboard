@@ -27,6 +27,18 @@ $(document).ready(function() {
       .then(function(data) {
         var uvDanger = data['current']['uvi']
         $('#uv').html(uvDanger)
+        if (uvDanger < 3) {
+          $('#uv').css('background-color', 'green')
+        } else if (uvDanger > 3 && uvDanger < 6) {
+          $('#uv').css('background-color', 'yellow')
+        } else if (uvDanger > 6 && uvDanger < 8) {
+          $('#uv').css('background-color', 'orange')
+        } else if (uvDanger > 8 && uvDanger < 10) {
+          $('#uv').css('background-color', 'red')
+        } else {
+          $('#uv').css('background-color', 'black')
+          $('#uv').text('DANGER')
+        }
       })
     })
   })
