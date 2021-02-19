@@ -14,7 +14,20 @@ $(document).ready(function() {
       $('#temp').html((((data['main']['temp'] - 273.15) * 9/5) + 32).toFixed(1) + "°F") // INSERTING THE FETCHED TEMP DATA
       $('#humid').html(data['main']['humidity'] + "%") // INSERTING THE FETCHED HUMIDITY DATA
       $('#wind').html((data['wind']['speed']) + "mph") // INSERTING THE FETCHED WIND SPEED DATA
-      console.log(data)
+      // CREATE LATITUDE & LONGITUDE VARIABLES TO INSERT INTO THE NEXT FETCH
+      var lat = data['coord']['lat']
+      var lon = data['coord']['lon']
+
+      fetch( // CREATING A NEW FETCH FOR UV INDEX B/C NEED TO USE LATITUDE/LONGITUDE DATA FROM PREVIOUS FETCH
+        'https://api.openweathermap.org/data/2.5/onecall?lat='+lat+'&lon='+lon+'&exclude=hourly,minutely&appid=4f4fc4b2d81e48700fb99a35e316ea42'
+      )
+      .then(function(response) {
+        return response.json();
+      })
+      .then(function(data) {
+        var uvDanger = data['current']['uvi']
+        $('#uv').html(uvDanger)
+      })
     })
   })
 })
